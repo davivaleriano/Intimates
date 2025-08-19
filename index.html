@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intimates • Loja de Roupas Íntimas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container row">
+      <button class="icon-btn only-mobile" id="menuToggle" aria-label="Abrir menu">
+        <span class="i">☰</span>
+      </button>
+      <a class="logo" href="#"><span>Intimates</span></a>
+      <nav class="nav" id="mainNav" aria-label="principal">
+        <a href="#novidades">Novidades</a>
+        <a href="#feminino">Feminino</a>
+        <a href="#masculino">Masculino</a>
+        <a href="#plus">Plus Size</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="actions">
+        <input id="searchInput" class="search" type="search" placeholder="Buscar peças…" aria-label="Buscar">
+        <button id="openCart" class="icon-btn" aria-label="Abrir carrinho"><span class="i">🛒</span><span id="cartCount" class="badge">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Conforto que abraça, estilo que encanta.</h1>
+        <p>Roupas íntimas para todos os corpos — qualidade, caimento e bem‑estar no seu dia a dia.</p>
+        <a href="#produtos" class="btn btn-primary">Ver produtos</a>
+        <a href="#sobre" class="btn btn-ghost">Conheça a loja</a>
+      </div>
+    </section>
+
+    <section class="container filters" id="produtos">
+      <div class="filter-group">
+        <label for="category">Categoria</label>
+        <select id="category">
+          <option value="todas">Todas</option>
+          <option value="feminino">Feminino</option>
+          <option value="masculino">Masculino</option>
+          <option value="plus">Plus Size</option>
+          <option value="conjuntos">Conjuntos</option>
+          <option value="sutiens">Sutiãs</option>
+          <option value="calcinhas">Calcinhas</option>
+          <option value="cuecas">Cuecas</option>
+          <option value="pijamas">Pijamas</option>
+          <option value="modeladores">Modeladores</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="size">Tamanho</label>
+        <select id="size">
+          <option value="todos">Todos</option>
+          <option value="PP">PP</option>
+          <option value="P">P</option>
+          <option value="M">M</option>
+          <option value="G">G</option>
+          <option value="GG">GG</option>
+          <option value="XG">XG</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sort">Ordenar</label>
+        <select id="sort">
+          <option value="relevancia">Relevância</option>
+          <option value="menor-preco">Menor preço</option>
+          <option value="maior-preco">Maior preço</option>
+          <option value="novidades">Novidades</option>
+        </select>
+      </div>
+      <button id="clearFilters" class="btn btn-ghost small">Limpar filtros</button>
+    </section>
+
+    <section class="container grid" id="productGrid" aria-live="polite">
+      <!-- Produtos são inseridos via JS -->
+    </section>
+
+    <section class="container newsletter" id="novidades">
+      <div class="card">
+        <h2>Receba novidades e promoções</h2>
+        <form id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Seu e-mail" required aria-label="E-mail">
+          <button class="btn btn-primary" type="submit">Quero receber</button>
+        </form>
+        <p class="muted">Ao se inscrever, você concorda com nossa <a href="#" aria-label="Política de privacidade">política de privacidade</a>.</p>
+      </div>
+    </section>
+
+    <section class="container about" id="sobre">
+      <div class="about-inner">
+        <div>
+          <h2>Sobre a Intimates</h2>
+          <p>A Intimates nasceu para celebrar o conforto e a autoestima. Selecionamos tecidos macios, modelagens inteligentes e acabamentos de alta durabilidade para você se sentir bem o dia inteiro.</p>
+          <ul>
+            <li>Envio para todo o Brasil</li>
+            <li>Troca grátis em 7 dias</li>
+            <li>Parcelamento em até 6x</li>
+            <li>Atendimento humanizado</li>
+          </ul>
+        </div>
+        <div class="about-media" role="img" aria-label="Mockup de lingerie em fundo suave"></div>
+      </div>
+    </section>
+
+    <section class="container contact" id="contato">
+      <h2>Fale com a gente</h2>
+      <form id="contactForm" class="card">
+        <div class="row gap">
+          <input required id="nome" placeholder="Seu nome" aria-label="Nome">
+          <input required id="email" type="email" placeholder="Seu e-mail" aria-label="E-mail">
+          <input id="telefone" placeholder="Seu telefone (opcional)" aria-label="Telefone">
+        </div>
+        <textarea required id="mensagem" rows="4" placeholder="Como podemos ajudar?" aria-label="Mensagem"></textarea>
+        <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container row">
+      <p>© <span id="year"></span> Intimates • Loja de Roupas Íntimas</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        <a href="#" aria-label="E-mail">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carrinho lateral -->
+  <aside id="cartDrawer" class="drawer" aria-hidden="true" aria-label="Carrinho">
+    <div class="drawer-header">
+      <h3>Carrinho</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="row between">
+        <strong>Total</strong>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary">Finalizar compra</button>
+      <p class="muted tiny">*Exemplo demonstrativo sem integração de pagamento.</p>
+    </div>
+  </aside>
+
+  <!-- Modal Checkout -->
+  <dialog id="checkoutModal" class="modal">
+    <form method="dialog" class="modal-inner" id="checkoutForm">
+      <div class="modal-header">
+        <h3>Finalizar compra</h3>
+        <button class="icon-btn" id="closeCheckout" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="row gap">
+          <input required id="ckNome" placeholder="Nome completo">
+          <input required id="ckEmail" type="email" placeholder="E-mail">
+        </div>
+        <div class="row gap">
+          <input required id="ckCep" placeholder="CEP">
+          <input required id="ckEndereco" placeholder="Endereço">
+        </div>
+        <div class="row gap">
+          <select id="ckPagamento" required>
+            <option value="">Forma de pagamento</option>
+            <option value="pix">Pix</option>
+            <option value="cartao">Cartão de crédito</option>
+            <option value="boleto">Boleto</option>
+          </select>
+          <input id="ckCupom" placeholder="Cupom (opcional)">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" value="cancel">Cancelar</button>
+        <button class="btn btn-primary" id="confirmarPedido" value="default">Confirmar pedido</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
